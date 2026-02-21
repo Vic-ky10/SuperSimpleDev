@@ -1,13 +1,13 @@
+import axios from "axios";
 import { Header } from "../components/Header";
 import "./homePage.css";
 
 import { products } from "../../ecommerce-project-main/data/products";
 
 function HomePage() {
-  fetch("http://localhost:3000/api/products").then((Response) => {
-    Response.json().then((data) => {
-      console.log(data);
-    });
+  axios.get("http://localhost:3000/api/products") // axios is the cleaner way to make requese to the backend
+  .then((response) => {
+    console.log(response.data);
   });
 
   return (
