@@ -43,8 +43,12 @@ function CheckoutPage({ cart, loadCart }) {
         <div className="header-content">
           <div className="checkout-header-left-section">
             <Link to="/">
-              <img className="logo" src="images/logo.png" />
-              <img className="mobile-logo" src="images/mobile-logo.png" />
+              <img className="logo" src="images/logo.png" alt="Amazon logo" />
+              <img
+                className="mobile-logo"
+                src="images/mobile-logo.png"
+                alt="Amazon mobile logo"
+              />
             </Link>
           </div>
 
@@ -57,7 +61,7 @@ function CheckoutPage({ cart, loadCart }) {
           </div>
 
           <div className="checkout-header-right-section">
-            <img src="images/icons/checkout-lock-icon.png" />
+            <img src="images/icons/checkout-lock-icon.png" alt="Secure checkout" />
           </div>
         </div>
       </div>
@@ -71,9 +75,10 @@ function CheckoutPage({ cart, loadCart }) {
             deliveryOptions={deliveryOptions }
             updateDeliveryOption={updateDeliveryOption}
             loadCart={loadCart}
+            loadPaymentSummary={loadPaymentSummary}
           />
 
-          <PaymentSummary paymentSummary={paymentSummary} />
+          <PaymentSummary paymentSummary={paymentSummary}  loadCart={loadCart} />
         </div>
       </div>
     </>

@@ -19,9 +19,12 @@ function DeliveryOptions({ deliveryOptions, cartItem, updateDeliveryOption }) {
                 checked={deliveryOption.id === cartItem.deliveryOptionId}
                 className="delivery-option-input"
                 name={`delivery-option-${cartItem.productId}`}
-                onChange={() =>
-                  updateDeliveryOption(cartItem.productId, deliveryOption.id)
-                }
+                onChange={() => {
+                  if (deliveryOption.id === cartItem.deliveryOptionId) {
+                    return;
+                  }
+                  updateDeliveryOption(cartItem.productId, deliveryOption.id);
+                }}
               />
               <div>
                 <div className="delivery-option-date">

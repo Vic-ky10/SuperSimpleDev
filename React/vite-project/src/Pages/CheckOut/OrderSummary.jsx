@@ -8,6 +8,7 @@ function OrderSummary({
   deliveryOptions,
   updateDeliveryOption,
   loadCart,
+  loadPaymentSummary,
 }) {
   return (
     <>
@@ -25,6 +26,7 @@ function OrderSummary({
                 `http://localhost:3000/api/cart-items/${cartItem.productId}`,
               );
               await loadCart();
+              await loadPaymentSummary();
             };
 
             const deliveryDateText = selectedDeliveryOption
