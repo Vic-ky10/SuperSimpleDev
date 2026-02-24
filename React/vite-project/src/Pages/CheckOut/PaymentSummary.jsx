@@ -3,11 +3,11 @@ import { formatMoney } from "../../utils/money";
 import { useNavigate } from "react-router";
 
 function PaymentSummary({ paymentSummary, loadCart }) {
-   const navigate = useNavigate();
+  const navigate = useNavigate();
   const createOrder = async () => {
     await axios.post("http://localhost:3000/api/orders");
     await loadCart();
-    navigate('/orders')
+    navigate("/orders");
   };
   return (
     <>
@@ -53,8 +53,8 @@ function PaymentSummary({ paymentSummary, loadCart }) {
 
             <button
               className="place-order-button button-primary"
-              onClick={createOrder}
-            >
+              onClick={createOrder} >
+           
               Place your order
             </button>
           </div>
