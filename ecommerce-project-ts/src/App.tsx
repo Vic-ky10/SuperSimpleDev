@@ -8,10 +8,8 @@ function App() {
 
   const message : string = 'hello'
   console.log(message)
-  
-  
   message.toLowerCase();
-  message.toFixed();
+ ``
 
   return (
     <>
