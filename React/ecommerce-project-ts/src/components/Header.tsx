@@ -1,13 +1,20 @@
 import "./header.css";
 import { Link } from "react-router";
 
-export function Header({cart}) {
-
-  let totalQuantity = 0 ;
+export function Header({
+  cart,
+}: {
+  cart: {
+    productId: string;
+    quantity: number;
+    deliveryOptionId: string;
+  }[];
+}) {
+  let totalQuantity = 0;
 
   cart.forEach((cartItem) => {
-    totalQuantity += cartItem.quantity || 0
-  })
+    totalQuantity += cartItem.quantity || 0;
+  });
   return (
     <>
       <div className="header">
@@ -41,4 +48,3 @@ export function Header({cart}) {
     </>
   );
 }
-
