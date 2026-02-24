@@ -3,7 +3,7 @@ import { Link } from "react-router";
 
 export function Header({
   cart,
-}: {
+}: {                                                                                                                                                                                
   cart: {
     productId: string;
     quantity: number;
